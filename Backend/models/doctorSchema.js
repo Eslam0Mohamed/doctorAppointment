@@ -1,7 +1,7 @@
 import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
-const doctrSchema = mongoose.Schema({
+const doctorSchema = mongoose.Schema({
     name:
     {
         type: String,
@@ -22,8 +22,9 @@ const doctrSchema = mongoose.Schema({
     description: {
         type: String,
         required: true
-    }
-}, { timestamps })
+    },
+    image:String
+}, { timestamps:true })
 
-const doctorModel = mongoose.Model("Doctor",doctrSchema)
+const doctorModel = mongoose.model("Doctor",doctorSchema)
 export default doctorModel

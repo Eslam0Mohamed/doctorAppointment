@@ -1,3 +1,4 @@
+import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
 
@@ -15,4 +16,6 @@ const appointmentSchema = mongoose.Schema({
         required:true,
         type:String
     }
-})
+},{timestamps:true})
+const appointmentModel = mongoose.model("Appointment",appointmentSchema)
+export default appointmentModel
