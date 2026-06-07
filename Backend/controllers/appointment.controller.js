@@ -20,7 +20,7 @@ try {
         doctor,
         reason,
         user:req.user.id
-    }).populate("doctor")
+    })
     return res.status(201).json({success:true,message:" Appointment created successfully",data:appointment})
 } catch (error) {
     return res.status(500).json({success:false,message:error.message})
@@ -30,12 +30,12 @@ try {
 export const deleteAppointment = async(req,res)=>{
     try {
         const { id } = req.params
-        const appoinment = await doctorModel.findById(id)
+        const appoinment = await appointmentModel.findById(id)
         if (!appoinment) {
             return res.status(404).json({ success: false, message: "appointment not found" })
         }
         await appointmentModel.findByIdAndDelete(id)
-        return res.status(203).json({ success: true})
+        return res.status(204).json({ success: true})
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message })
     }
