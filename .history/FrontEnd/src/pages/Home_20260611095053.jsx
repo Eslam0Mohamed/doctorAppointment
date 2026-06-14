@@ -1,0 +1,16 @@
+import React from 'react'
+
+const Home = () => {
+  return (
+    <>
+      <section style={{backgroundImage:""}} className=''>
+<div className='content '>
+  <h1>welcome to our clinic</h1>
+  <p></p>
+</div>
+      </section>
+    </>
+  )
+}
+
+export default Home

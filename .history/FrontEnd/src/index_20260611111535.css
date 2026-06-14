@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@theme{
+    --color-main:#0ea5e9;
+    --color-secondry:#64748b;
+    --color-tertiary:#f0f9ff;
+    --color-neutral:#f8fafc;
+}
+
+@component{
+    .btn{
+        background:var(--color-main);
+        color:var(--color-neutral);
+        padding:0.5rem 1rem;
+        border-radius:0.25rem;
+        font-weight:500;
+        transition:background 0.3s ease;
+    }
+    .btn:hover{
+        background:var(--color-secondry);
+    }
+}

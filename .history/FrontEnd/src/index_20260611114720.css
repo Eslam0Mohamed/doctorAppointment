@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@layer components{
+    .btn{
+        @apply block hover:scale-105 hover:transition-all mt-6 hover:duration-300 hover:text-main hover:bg-tertiary  px-8 py-2 rounded-md bg-main text-white font-semibold
+    }
+    .heading{
+        @apply text-3xl font-bold text-tertiary
+    }
+}
+@theme{
+    --color-main:#0ea5e9;
+    --color-secondry:#64748b;
+    --color-tertiary:#f0f9ff;
+    --color-neutral:#f8fafc;
+}

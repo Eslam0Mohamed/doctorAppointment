@@ -3,7 +3,7 @@ import doctorModel from "../models/doctorSchema.js"
 export const addDoctor = async (req, res) => {
     try {
         const image  = req.file.filename
-        const { description, experianceYears, specialty, name } = req.body
+        const { description, experianceYears, specialty, name ,department} = req.body
         if (!description || !experianceYears || !specialty || !name || !image) {
             return res.status(400).json({ success: false, message: "All Fielsa are required" })
         }
@@ -12,6 +12,7 @@ export const addDoctor = async (req, res) => {
             experianceYears,
             specialty,
             name,
+            department,
             image: req.file.filename
         })
         return res.status(201).json({ success: true, message: "doctor created successfully" ,data:newDoctor})

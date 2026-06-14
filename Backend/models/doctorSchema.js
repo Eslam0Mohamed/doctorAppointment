@@ -23,7 +23,11 @@ const doctorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    image:String
+      department: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Department",
+    required: true
+  }
 }, { timestamps:true })
 
 const doctorModel = mongoose.model("Doctor",doctorSchema)
